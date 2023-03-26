@@ -4,7 +4,7 @@ USER node
 
 RUN mkdir /home/node/app && chmod -R 777 /home/node/app
 
-WORKDIR /home/node/app
+WORKDIR '/home/node/app'
 
 COPY ./package.json ./
 
