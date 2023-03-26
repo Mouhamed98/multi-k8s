@@ -2,6 +2,8 @@ FROM node:16-alpine
 
 USER node
 
+RUN sudo chmod -R 777 /home/node
+
 RUN mkdir -p /home/node/app
 
 WORKDIR /home/node/app
