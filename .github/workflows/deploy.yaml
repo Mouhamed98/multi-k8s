@@ -13,14 +13,14 @@ jobs:
       - run: docker build -t cygnetops/react-test -f ./client/Dockerfile.dev ./client
       - run: docker run -e CI=true cygnetops/react-test npm test
       - run: docker build -t mouhamedyaya00/client ./client
-      - run: docker build -t mouhamedyaya00/client ./nginx
-      - run: docker build -t mouhamedyaya00/client ./server
-      - run: docker build -t mouhamedyaya00/client ./worker
+      - run: docker build -t mouhamedyaya00/nginx ./nginx
+      - run: docker build -t mouhamedyaya00/server ./server
+      - run: docker build -t mouhamedyaya00/worker ./worker
 
       - run: docker push mouhamedyaya00/client
-      - run: docker push mouhamedyaya00/client
-      - run: docker push mouhamedyaya00/client
-      - run: docker push mouhamedyaya00/client
+      - run: docker push mouhamedyaya00/nginx
+      - run: docker push mouhamedyaya00/server
+      - run: docker push mouhamedyaya00/worker
 
       - name: Generate deployment package
         run: zip -r deploy . -x '*.git'
